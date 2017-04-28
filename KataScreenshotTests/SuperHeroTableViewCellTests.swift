@@ -12,10 +12,18 @@ import XCTest
 
 class SuperHeroTableViewCellTests: ScreenshotTest {
     
-    func testShowSRegularSuperHero() {
+    func testShowsRegularSuperHero() {
         let cell = givenASuperHeroTableViewCell()
         
         cell.configure(forItem: SuperHeroMother.givenASuperHero(isAvenger: false))
+        
+        verify(view: cell)
+    }
+    
+    func testShowsRegularSuperHeroLongName() {
+        let cell = givenASuperHeroTableViewCell()
+        
+        cell.configure(forItem: SuperHeroMother.givenASuperHeroLongName(isAvenger: false))
         
         verify(view: cell)
     }
