@@ -12,12 +12,36 @@ import UIKit
 class SuperHeroesViewControllerTests: ScreenshotTest {
 
     fileprivate let repository = MockSuperHeroesRepository()
-
+    
     func testShowsEmptyCase() {
         givenThereAreNoSuperHeroes()
-
+        
         let viewController = getSuperHeroDetailViewController()
-
+        
+        verify(viewController: viewController)
+    }
+    
+    func testShowsOneSuperHeroe() {
+        _ = givenThereAreSomeSuperHeroes(1)
+        
+        let viewController = getSuperHeroDetailViewController()
+        
+        verify(viewController: viewController)
+    }
+    
+    func testShowsTwoSuperHeroes() {
+        _ = givenThereAreSomeSuperHeroes(2)
+        
+        let viewController = getSuperHeroDetailViewController()
+        
+        verify(viewController: viewController)
+    }
+    
+    func testShowsTenSuperHeroes() {
+        _ = givenThereAreSomeSuperHeroes(10)
+        
+        let viewController = getSuperHeroDetailViewController()
+        
         verify(viewController: viewController)
     }
 
