@@ -8,4 +8,4 @@ end
 
 target 'KataScreenshotTests' do
     pod 'FBSnapshotTestCase'
-end
+end 
